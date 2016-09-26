@@ -1,0 +1,11 @@
+version: '2'
+services:
+  registry:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ${REGISTRY_HOST_DIR}:/tmp/registry-dev
+    container_name: ${REGISTRY_CONTAINER_NAME}
+    environment:
+      - VIRTUAL_HOST=${REGISTRY_VIRTUAL_HOST}
